@@ -28,10 +28,11 @@ We then created a sequence to sequence model i.e. **Encoder-Decoder layers**.
 It contains two parts: Embedding layer & RNN layer. The former converts each character in the word with the number of features specified as `encoding_embedding_size`. The later part being the RNN layer, we have used _LSTM cells_ stacked together after dropout technique. 
 
 3.	**Decoder:**
-Decoding model mainly comprises of two phases, _Training_ and _Inference_. Both of them share the same architecture and parameters, but the difference comes in feeding the shared model.
-Initially we preprocess the target label data for the training phase, i.e. we add a special token `<GO>` in front of all target data to imply the start of transliteration.
-While passing the embedding layer to the decoder, we cannot use `tf.contrib.layers.embed_sequence` like in encoder. The reason being, we need to pass the embedding layer to both training and inference phases and `tf.contrib.layers.embed_sequence` embeds the prepared dataset before running, but in inference phase we need the dynamic embedding capability.
-In decoder-training-phase, the embeded input is passed as input in each time step. Whereas in decoder-inference-phase, the the output of the previous time-step is dynamically passed over embedding parameters and fed to the next time step.
+Decoding model mainly comprises of two phases, _Training_ and _Inference_. 
+Both of them share the same architecture and parameters, but the difference comes in feeding the shared model.
+ * Initially we preprocess the target label data for the training phase, i.e. we add a special token `<GO>` in front of all target data to imply the start of transliteration.
+ * While passing the embedding layer to the decoder, we cannot use `tf.contrib.layers.embed_sequence` like in encoder. The reason being, we need to pass the embedding layer to both training and inference phases and `tf.contrib.layers.embed_sequence` embeds the prepared dataset before running, but in inference phase we need the dynamic embedding capability.
+ * In decoder-training-phase, the embeded input is passed as input in each time step. Whereas in decoder-inference-phase, the the output of the previous time-step is dynamically passed over embedding parameters and fed to the next time step.
 `tf.variable.scope()` is used for the sharing of parameters and variables between training and inference processes since they both share the same architecture. 
 
 4. **To build the seq2seq model:**
