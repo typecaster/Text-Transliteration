@@ -50,15 +50,15 @@ We used _Adam optimizer_ (`tf.train.AdamOptimizer`) with specified learning rate
 8. **Train:**
 We defined get_accuracy function to compute train and validation accuracy.
  
-Fig: Training and Validation accuracy of the model over 60 epochs.
+![Training and Validation accuracy of the model over 60 epochs](/Screenshot_accuracy.JPG)
 
-Save parameters:
+9. **Save parameters:**
 We then saved the batch_size and save_path parameters for inference.
 
-Transliterate:
-We then defined a function word_to_seq function to do the transliteration of input words by the user.
+## Transliterate:
+We then defined a function `word_to_seq` to do the transliteration of input words by the user.
  
-Fig:  Sample Prediction 
+![Sample Prediction](/ExampleScreenshot.JPG) 
 
 
 
