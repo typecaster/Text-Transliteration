@@ -35,26 +35,26 @@ Both of them share the same architecture and parameters, but the difference come
  * In decoder-training-phase, the embeded input is passed as input in each time step. Whereas in decoder-inference-phase, the the output of the previous time-step is dynamically passed over embedding parameters and fed to the next time step.
 `tf.variable.scope()` is used for the sharing of parameters and variables between training and inference processes since they both share the same architecture. 
 
-4. **To build the seq2seq model:**
+## To build the seq2seq model:
 Here, the previously created layers, `encoding_layer`, `process_decoder_input` and `decoding_layer` are put together to build the full-fledged Sequence to Sequence model.
 
-5. **Build the Graph:**
-   * Cost Function:
+## Build the Graph:
+1. **Cost Function:**
      `tf.contrib.seq2seq.sequence_loss` is used for calculating loss function i.e., a weighted softmax cross entropy loss function. Weights are explicitly provided as an argument, and it can be created by `tf.sequence_mask`. 
 
-6. **Optimizer:**
+2. **Optimizer:**
 We used _Adam optimizer_ (`tf.train.AdamOptimizer`) with specified learning rate. 
 
-7. **Gradient Clipping:**
+3. **Gradient Clipping:**
 `tf.clip_by_value` is used to do the gradient clipping to overcome exploding gradient.
 
-8. **Train:**
+## Train:
 We defined get_accuracy function to compute train and validation accuracy.
  
 ![Training and Validation accuracy of the model over 60 epochs](/Screenshot_accuracy.JPG)
 
-9. **Save parameters:**
-We then saved the batch_size and save_path parameters for inference.
+## Save parameters:
+We then saved the `batch_size` and `save_path` parameters for inference.
 
 ## Transliterate:
 We then defined a function `word_to_seq` to do the transliteration of input words by the user.
