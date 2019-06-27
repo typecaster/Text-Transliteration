@@ -16,7 +16,7 @@ The data has been stored separately into two variables; source text and target t
 
 
 ## Preprocessing: 
-The preprocessing contains three important steps which include:
+The preprocessing contains two important steps which include:
 *	**Creating lookup tables:** 
 We made dictionaries (i.e. mapping tables) of character to corresponding character id and vice versa for both the source and target characters (vocabulary). Now we have 4 lookup tables.
 *	**Text to character ids:**
