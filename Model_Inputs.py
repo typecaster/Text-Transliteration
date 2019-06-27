@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#
+
 
 import tensorflow as tf
 def enc_dec_model_inputs():
