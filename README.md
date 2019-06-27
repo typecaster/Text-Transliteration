@@ -4,11 +4,16 @@ In this project, we have built a character level language model for [translitera
 Transliteration is the phonetic translation of the words in a source language ( here English ) into equivalent words in a target language ( here Hindi ). It preserves the pronunciation of the words.  
 This project has been inspired by the NMT model developed by [deep-diver]( https://github.com/deep-diver/EN-FR-MLT-tensorflow ).
 
+### Note: Refer to [GUIDE.md](/GUIDE.md) for a brief on code implementation.
+
 ## Overview of the Architecture
 Transliteration being a type of many to many problem, we built a encoder-decoder model in TensorFlow. The objective of the model is Transliterating English text to Hindi script.
+
 * **Dataset:** We have used [FIRE 2013](http://cse.iitkgp.ac.in/resgrp/cnerg/qa/fire13translit/index.html) dataset to train the model. FIRE dataset is useful for transliteration tasks, the one we used contains 30,823 word transliteration pairs of English to Hindi.
 * **Exploring the data:**
 The data has been stored separately into two variables; source text and target text i.e. English and Hindi respectively
+
+
 
 ## Preprocessing: 
 The preprocessing contains three important steps which include:
