@@ -64,7 +64,7 @@ We then saved the `batch_size` and `save_path` parameters for inference.
 ## Transliterate:
 We then defined a function `word_to_seq` to do the transliteration of input words by the user.
  
-![Sample Prediction](/ExampleScreenshot.JPG) 
+![Sample Prediction](/ExampleScreenshot.JPG) .
 
 
 
